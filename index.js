@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const connectDB = require('./db/connect');
 require('dotenv').config();
-const books = require("./router/books");
+const route = require("./routes/router");
 
 app.use(express.json());
 
-app.use('/api/v1/books',books);
+app.use('/api/v1',books);
 app.get('/',(req,res)=>{
 	res.json("hello");
 })
